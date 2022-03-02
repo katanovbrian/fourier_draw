@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script src="convert.js"></script>    
+  <script src="drawing.js"></script>    
+  <script src="complex.js"></script>
+  <script src="fourier.js"></script>
+  <script src="sketch.js"></script>
+
+  <script>
+    function myFunction() {
+      
+      document.getElementById("file").hidden = false;
+    } </script>
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+   <style> body { padding: 0; margin: 0; } </style>
+</head>
+<h1>Drawing Fourier Transforms</h1>
+
+<label for="fdrawing">Select Drawing</label>
+<select name="fdrawing" id="fdrawing" onchange = "clearDrawing(); getFrequencies();">
+  <option value="0">fourier</option>
+  <option value="1">hilbert</option>
+  <option value="2">drawing</option>
+  <option value="3">shoes</option>
+  <option value="4" onselect="myFunction();">other</option>
+</select>
+
+<label for="file">Upload SVG</label>
+<input hidden type="file" id="file" accept="image/*.svg">
+
+<label for="range">Resolution</label>
+<input type="range" id = "myRange" min = "0.01" max = "1" step = "0.01" onchange="clearDrawing();">
+<body>
+
+</body>
+</html>
